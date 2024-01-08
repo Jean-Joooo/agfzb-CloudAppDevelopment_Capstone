@@ -15,6 +15,9 @@ logger = logging.getLogger(__name__)
 
 
 # Create your views here.
+def index(request):
+    context = {'static_url': settings.STATIC_URL,}
+    return render(request, 'index.html', context) 
 
 
 # Create an `about` view to render a static about page
