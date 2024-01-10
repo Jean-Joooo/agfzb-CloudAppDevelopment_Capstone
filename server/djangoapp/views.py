@@ -9,6 +9,7 @@ from django.contrib import messages
 from datetime import datetime
 import logging
 import json
+from django.conf import settings
 
 
 # Get an instance of a logger
