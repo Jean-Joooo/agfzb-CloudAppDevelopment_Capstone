@@ -19,10 +19,6 @@ urlpatterns = [
     # path for logout
 
     path('index/', views.index, name='Index'),
-
+   # path for add a review view
     path('add_review/', views.add_review, name='add a review'),
-    # path for add a review view
-
-    path('admin/', admin.site.urls),
-    path('templates/', include('templates.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
