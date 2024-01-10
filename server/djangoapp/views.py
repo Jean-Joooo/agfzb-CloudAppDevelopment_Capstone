@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 # Create your views here.
 def index(request):
     context = {'static_url': settings.STATIC_URL,}
-    return render(request, 'index.html', context) 
+    return render(request, 'djangoapp/index.html', context) 
 
 
 # Create an `about` view to render a static about page
@@ -27,18 +27,18 @@ def index(request):
 
 def about(request):
     context = {'static_url': settings.STATIC_URL,}
-    return render(request, 'about.html', context) 
+    return render(request, 'djangoapp/about.html', context) 
 
 def registration(request):
     context = {'static_url': settings.STATIC_URL,}
-    return render(request, 'registration.html', context) 
+    return render(request, 'djangoapp/registration.html', context) 
 
 # Create a `contact` view to return a static contact page
 #def contact(request):
 
 def contact(request):
     context = {'static_url': settings.STATIC_URL,}
-    return render(request, 'contact.html', context) 
+    return render(request, 'djangoapp/contact.html', context) 
 
 # Create a `login_request` view to handle sign in request
 # def login_request(request):
