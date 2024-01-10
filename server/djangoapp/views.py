@@ -25,9 +25,18 @@ def index(request):
 # def about(request):
 # ...
 
+def about(request):
+    context = {'static_url': settings.STATIC_URL,}
+    return render(request, 'about.html', context) 
+
+
 
 # Create a `contact` view to return a static contact page
 #def contact(request):
+
+def contact(request):
+    context = {'static_url': settings.STATIC_URL,}
+    return render(request, 'about.html', context) 
 
 # Create a `login_request` view to handle sign in request
 # def login_request(request):
