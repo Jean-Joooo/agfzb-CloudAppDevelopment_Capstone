@@ -27,11 +27,6 @@ urlpatterns = [
     path('dealer_reviews/', views.dealerreviews, name='Dealer reviews'),
     # path for add a review view
 
-from django.contrib import admin
-from django.urls import include, path
-from django.conf.urls.static import static
-from django.conf import settings
-
     path('admin/', admin.site.urls),
     path('templates/', include('templates.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
