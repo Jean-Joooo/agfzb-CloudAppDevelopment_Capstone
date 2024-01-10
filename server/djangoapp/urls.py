@@ -10,20 +10,29 @@ urlpatterns = [
     # name the URL
      path(route='', view=static, name='static'),
 
-    # path for about view
+    path('about/', views.about, name='about'),
 
-    # path for contact us view
+    path('contact/', views.contact, name='contact'),
 
-    # path for registration
+    path('login/', views.login_request, name='login'),
+    path('logout/', views.logout_request, name='logout'),
 
     # path for login
 
     # path for logout
 
-    path(route='', view=views.get_dealerships, name='index'),
+    path('index/', views.index, name='Index'),
 
-    # path for dealer reviews view
-
+    path('add_review/', views.add_review, name='add a review'),
+    path('dealer_reviews/', views.dealerreviews, name='Dealer reviews'),
     # path for add a review view
 
+from django.contrib import admin
+from django.urls import include, path
+from django.conf.urls.static import static
+from django.conf import settings
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('templates/', include('templates.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
