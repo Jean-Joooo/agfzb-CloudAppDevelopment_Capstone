@@ -14,23 +14,24 @@
 
 </head>
 
-    <body>
-    
-     This is the index page of your Django app!
+  <body>
+  
     <!--Add a nav bar here -->
         <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <div class="navbar-header">
-              <a class="navbar-brand">Home</a>
+              <a class="navbar-brand" >Home</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
 
             <li>
                 <a class="btn btn-link"</a>
-                <a class="btn btn-link"</a>
+                <a class="btn btn-link">Logout</a>
             </li>
-        
-            <li>                    
+            
+            <li>
+                <form class="form-inline" method="post">
+                   
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Username" name="username" >
                         <input type="password" class="form-control" placeholder="Password" name="psw" >
@@ -39,6 +40,7 @@
                     </div>
                 </form>
             </li>
+            
         </ul>
     </div>
 </nav>
