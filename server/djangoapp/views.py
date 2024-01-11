@@ -112,3 +112,4 @@ def add_review(request):
     context = {}
     if request.method == "GET":
         return render(request, 'djangoapp/index.html', context)
+
