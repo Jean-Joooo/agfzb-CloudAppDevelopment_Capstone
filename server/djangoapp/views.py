@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 def registration_request(request):
     context = {}
     if request.method == 'GET':
-        return render(request, 'djangoapp/registration.html', context)
+        return render(request, 'djangoapp/user_registration.html', context)
     elif request.method == 'POST':
         # Check if user exists
         username = request.POST['username']
@@ -34,10 +34,10 @@ def registration_request(request):
             user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,
                                             password=password)
             login(request, user)
-            return redirect("onlinecourse:index")
+            return redirect("djangoapp:index")
         else:
             context['message'] = "User already exists."
-            return render(request, 'djangoapp/registration.html', context)
+            return render(request, 'djangoapp/user_registration.html', context)
 
 
 def login_request(request):
@@ -48,13 +48,21 @@ def login_request(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('djangoapp/index:index')
+            return redirect('djangoapp:index')
         else:
             context['message'] = "Invalid username or password."
             return render(request, 'djangoapp/user_login.html', context)
     else:
            return render(request, 'djangoapp/user_login.html', context)
 
+def logout_request(request):
+    logout(request)
+    return redirect('djangoapp:index')
+
+
+def about(request):
+    context = {}
+    return render(request, 'djangoapp/', context) 
 
 def logout_request(request):
     logout(request)
@@ -108,4 +116,3 @@ def add_review(request):
     context = {}
     if request.method == "GET":
         return render(request, 'djangoapp/index.html', context)
-
