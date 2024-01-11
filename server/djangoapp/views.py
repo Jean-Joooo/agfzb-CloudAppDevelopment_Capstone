@@ -48,17 +48,17 @@ def login_request(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('onlinecourse:index')
+            return redirect('djangoapp/index:index')
         else:
             context['message'] = "Invalid username or password."
             return render(request, 'djangoapp/user_login.html', context)
     else:
-        return render(request, 'djangoapp/user_login.html', context)
+           return render(request, 'djangoapp/user_login.html', context)
 
 
 def logout_request(request):
     logout(request)
-    return redirect('djangoapp:index')
+    return redirect('djangoapp/index:index')
 
 
 # Create your views here.
