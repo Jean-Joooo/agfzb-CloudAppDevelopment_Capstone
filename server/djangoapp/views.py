@@ -64,10 +64,6 @@ def about(request):
     context = {}
     return render(request, 'djangoapp/', context) 
 
-def logout_request(request):
-    logout(request)
-    return redirect('djangoapp/index:index')
-
 
 # Create your views here.
 def index(request):
