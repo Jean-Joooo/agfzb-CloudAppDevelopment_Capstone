@@ -8,7 +8,6 @@ urlpatterns = [
     # route is a string contains a URL pattern
     # view refers to the view function
     # name the URL
-    path(route='', view=static, name='static'),
 
     path(route='', views.index, name='index'),
 
