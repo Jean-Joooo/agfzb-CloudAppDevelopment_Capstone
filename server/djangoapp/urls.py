@@ -10,6 +10,8 @@ urlpatterns = [
     # name the URL
     path(route='', view=static, name='static'),
 
+    path(route='', views.index, name='index'),
+
     path('about/', views.about, name='about'),
 
     path('contact/', views.contact, name='contact'),
@@ -22,7 +24,6 @@ urlpatterns = [
 
     # path for logout
 
-    path('index/', views.index, name='Index'),
    # path for add a review view
     path('add_review/', views.add_review, name='add a review'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
