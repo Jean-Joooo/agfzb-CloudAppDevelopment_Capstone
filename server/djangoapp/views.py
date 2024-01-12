@@ -107,5 +107,5 @@ def get_dealer_details(request, dealer_id):
 def add_review(request):
     context = {}
     if request.method == "GET":
-        return render(request, 'djangoapp/index.html', context)
+        return render(request, 'djangoapp/add_review.html', context)
 
