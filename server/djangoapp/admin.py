@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CarModel, CarMake
+from .models import CarMake, CarModel
 
 
 
