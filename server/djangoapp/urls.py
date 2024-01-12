@@ -21,6 +21,8 @@ urlpatterns = [
     path('login/', views.login_request, name='login'),
     path('logout/', views.logout_request, name='logout'),
 
+    path('get_dealerships/', views.get_dealerships, name='get_dealerships')
+
     # path for login
 
     # path for logout
