@@ -10,8 +10,10 @@ urlpatterns = [
     # name the URL
 
    path('', views.index, name='djangoapp'),
-  
-   path('index/', views.index, name='index'),
+
+   path('index/', views.index, name='Index'), 
+
+   path(route='', view=views.get_dealerships, name='index'),
 
     path('about/', views.about, name='about'),
 
@@ -25,8 +27,7 @@ urlpatterns = [
 
     # path for logout
 
-    path('index/', views.index, name='Index'),
+
    # path for add a review view
     path('add_review/', views.add_review, name='add a review'),
-    path(route='', view=views.get_dealerships, name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

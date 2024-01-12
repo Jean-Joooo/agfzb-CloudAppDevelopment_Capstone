@@ -61,7 +61,7 @@ def logout_request(request):
 
 def get_dealerships(request):
     if request.method == "GET":
-        url = "djangoapp/dealerships/dealer-get"
+        url = "your-cloud-function-domain/dealerships/dealer-get"
         # Get dealers from the URL
         dealerships = get_dealers_from_cf(url)
         # Concat all dealer's short name

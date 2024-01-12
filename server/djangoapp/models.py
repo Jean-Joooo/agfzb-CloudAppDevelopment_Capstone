@@ -14,13 +14,15 @@ class CarMake(models.Model):
 class CarModel(models.Model):
     carmake=models.ForeignKey(CarMake, on_delete=models.CASCADE)
     name=models.CharField(null=False, max_length=30, default='CarModel')
-    dealerid=models.IntegerField(default=0)
+    dealerid=models.IntegerField(default=2)
     cartype=models.CharField(max_length=30)
     year=models.DateField(default=now)
     def __str__(self):
         return "Name: " + self.name + "," + \
-               "CarType: " + self.cartype + "," + \
-               "Year: " + str(self.year.year)
+               "Dealer ID: " + str(self.dealer_id) + "," + \
+               "Car Type: " + self.car_type + "," + \
+               "Year: " + str(self.year) + "," + \
+               "Car Make: " + str(self.car_make)
 
 class CarDealer:
     def __init__(self, address, city, full_name, id, lat, long, short_name, st, zip):

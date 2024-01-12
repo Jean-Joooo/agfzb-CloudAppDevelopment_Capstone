@@ -2,6 +2,7 @@ import requests
 import json
 from .models import CarDealer
 from requests.auth import HTTPBasicAuth
+
 def get_request(url, **kwargs):
     print(kwargs)
     print("GET from {} ".format(url))
