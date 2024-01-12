@@ -60,7 +60,7 @@ def logout_request(request):
     return redirect('djangoapp:index')
 
 
-def about(request):
+def djangoapp(request):
     context = {}
     return render(request, 'djangoapp/', context) 
 
