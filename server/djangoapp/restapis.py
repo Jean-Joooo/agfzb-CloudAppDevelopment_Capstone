@@ -2,7 +2,6 @@ import requests
 import json
 from .models import CarDealer
 from requests.auth import HTTPBasicAuth
-
 def get_request(url, **kwargs):
     print(kwargs)
     print("GET from {} ".format(url))
@@ -17,10 +16,6 @@ def get_request(url, **kwargs):
     print("With status {} ".format(status_code))
     json_data = json.loads(response.text)
     return json_data
-response = requests.get(url, params=params, headers={'Content-Type': 'application/json'},
-                                   auth=HTTPBasicAuth('apikey', api_key))
-
-response = requests.post(url, params=kwargs, json=payload)
 
 
 def get_dealers_from_cf(url, **kwargs):
@@ -33,7 +28,7 @@ def get_dealers_from_cf(url, **kwargs):
         # For each dealer object
         for dealer in dealers:
             # Get its content in `doc` object
-            dealer_doc = dealer
+            dealer_doc = dealer["doc"]
             # Create a CarDealer object with values in `doc` object
             dealer_obj = CarDealer(address=dealer_doc["address"], city=dealer_doc["city"], full_name=dealer_doc["full_name"],
                                    id=dealer_doc["id"], lat=dealer_doc["lat"], long=dealer_doc["long"],
