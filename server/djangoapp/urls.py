@@ -8,6 +8,8 @@ urlpatterns = [
     # route is a string contains a URL pattern
     # view refers to the view function
     # name the URL
+
+  path('/', views.index, name='djangoapp'),
   
    path('index/', views.index, name='index'),
 
