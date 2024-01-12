@@ -100,9 +100,6 @@ def get_dealerships(request):
 
 def get_dealer_details(request, dealer_id):
     if request.method == "GET":
-    get_dealer_reviews_from_cf(dealer_id)
-    context = {}
-    if request.method == "GET":
         return HttpResponse(dealer_details)
 
 # Create a `add_review` view to submit a review
