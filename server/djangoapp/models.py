@@ -8,8 +8,7 @@ class CarMake(models.Model):
     name=models.CharField(null=False, max_length=30, default='CarMake')
     description=models.CharField(max_length=1000)
     def __str__(self):
-        return "Name: " + self.name + "," + \
-               "Description: " + self.description
+        return self.name + " " + self.description
 
 class CarModel(models.Model):
     carmake=models.ForeignKey(CarMake, on_delete=models.CASCADE)
@@ -18,9 +17,7 @@ class CarModel(models.Model):
     cartype=models.CharField(max_length=30)
     year=models.DateField(default=now)
     def __str__(self):
-        return "Name: " + self.name + "," + \
-               "CarType: " + self.cartype + "," + \
-               "Year: " + str(self.year.year)
+        return self.name + " " + self.cartype + " " + self.year
 
 class CarDealer:
     def __init__(self, address, city, full_name, id, lat, long, short_name, st, zip):
