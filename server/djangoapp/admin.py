@@ -15,14 +15,12 @@ class CarModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'dealer_id', 'car_type', 'year')
     list_filter = ['name']
     search_fields = ['name', 'dealer_id', 'car_type', 'year']
-    
+
+admin.site.register(CarModel)
+admin.site.register(CarMake)
 
 # CarModelAdmin class
 
 # CarMakeAdmin class with CarModelInline
 
 # Register models here
-
-
-admin.site.register(CarModel, CarMakeAdmin)
-admin.site.register(CarMake, CarModelAdmin)
