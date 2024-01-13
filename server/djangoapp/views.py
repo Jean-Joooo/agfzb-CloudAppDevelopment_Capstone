@@ -61,9 +61,6 @@ def logout_request(request):
 
 
 # Create your views here.
-def index(request):
-    context = {}
-    return render(request, 'djangoapp/index.html', context) 
 
 
 # Create an `about` view to render a static about page
