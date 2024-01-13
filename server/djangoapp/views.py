@@ -60,11 +60,6 @@ def logout_request(request):
     return redirect('djangoapp:index')
 
 
-def about(request):
-    context = {}
-    return render(request, 'djangoapp/', context) 
-
-
 # Create your views here.
 def index(request):
     context = {}
@@ -87,20 +82,12 @@ def contact(request):
     context = {}
     return render(request, 'djangoapp/contact.html', context) 
 
-# Create a `login_request` view to handle sign in request
-# def login_request(request):
-# ...
-
-# Create a `logout_request` view to handle sign out request
-# def logout_request(request):
-# ...
-
-# Create a `registration_request` view to handle sign up request
-# def registration_request(request):
-# ...
-
 # Update the `get_dealerships` view to render the index page with a list of dealerships
 
+def get_dealerships(request):
+    context = {}
+    if request.method == "GET":
+        return render(request, 'djangoapp/index.html', context)
 
 # Create a `get_dealer_details` view to render the reviews of a dealer
 # def get_dealer_details(request, dealer_id):
@@ -112,4 +99,3 @@ def add_review(request):
     context = {}
     if request.method == "GET":
         return render(request, 'djangoapp/index.html', context)
-
