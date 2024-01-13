@@ -19,6 +19,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Dealership Review</a>
+                <a class="btn btn-link" href="{% url 'djangoapp:contact' %}">contact</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
