@@ -23,8 +23,7 @@ class CarModel(models.Model):
         return "Name: " + self.name + "," + \
                "Dealer ID: " + str(self.dealer_id) + "," + \
                "Car Type: " + self.car_type + "," + \
-               "Year: " + str(self.year) + "," + \
-               "Car Make: " + str(self.car_make)    
+               "Year: " + str(self.year) + "," +   
     
 class CarDealer:
     def __init__(self, address, city, full_name, id, lat, long, short_name, st, zip):
