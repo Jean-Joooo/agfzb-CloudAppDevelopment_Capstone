@@ -99,4 +99,4 @@ def get_dealerships(request):
 def add_review(request):
     context = {}
     if request.method == "GET":
-        return render(request, 'djangoapp/index.html', context)
+        return render(request, 'djangoapp/add_review.html', context)
