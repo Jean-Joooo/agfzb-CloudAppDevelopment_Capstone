@@ -5,22 +5,38 @@ from django.utils.timezone import now
 # Create your models here.
 
 class CarMake(models.Model):
-    name=models.CharField(null=False, max_length=30, default='CarMake')
-    description=models.CharField(max_length=1000)
+    name=models.CharField(null=False, max_length=30, default='Car Name')
+    description = models.CharField(max_length=1000)
     def __str__(self):
         return "Name: " + self.name + "," + \
                "Description: " + self.description
 
 class CarModel(models.Model):
-    carmake=models.ForeignKey(CarMake, on_delete=models.CASCADE)
-    name=models.CharField(null=False, max_length=30, default='CarModel')
-    dealerid=models.IntegerField(default=0)
-    cartype=models.CharField(max_length=30)
-    year=models.DateField(default=now)
+    CarMake = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    name = models.CharField(null=False, max_length=30, default='CarModel')
+    dealerId = models.IntegerField(null=False, default=0)
+    year = models.DateField(null=False, default=now)
+
+    SEDAN = 'Sedan'
+    SUV = 'SUV'
+    WAGON = 'Wagon'
+    Sport = 'Sport car'
+    OTHER = 'Other'
+    CAR_CHOICES = [
+        (SEDAN, 'Sedan'),
+        (SUV, 'SUV'),
+        (WAGON, 'Wagon'),
+        (Sport, 'Sport car'),
+        (OTHER, 'Other'),
+    ]
+
+    carType = models.CharField(null=False, max_length=20, choices=CAR_CHOICES, default=OTHER)
+
     def __str__(self):
-        return "Name: " + self.name + "," + \
-               "CarType: " + self.cartype + "," + \
-               "Year: " + str(self.year.year)
+        return "Name" + self.name + "," + \
+            "Type" + self.carType + "," + \
+            "Year" + self.year + "," + \
+            "DealerId" + self.dealerId
 
 class CarDealer:
     def __init__(self, address, city, full_name, id, lat, long, short_name, st, zip):
