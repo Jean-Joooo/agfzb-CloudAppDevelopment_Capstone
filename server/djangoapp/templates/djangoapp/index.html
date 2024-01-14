@@ -45,17 +45,31 @@
     </nav>
 
 <!--Add a dealer table here -->
-<table data-toggle="table" data-filter-control="true"src="{{get_dealerships}}/{{ get_dealers_from_cf }}" data-show-export="true" data-click-to-select="true">
+<table class="table" id="table">
     <thead>
         <tr>
             <th data-field="id">ID</th>
-            <th data-field="dealer_name">Dealer Name</th>
+            <th data-field="full_name">Dealer Name</th>
             <th data-field="city">City</th>
-            <th data-field="address"> Address</th>
-            <th data-field="zip">ZIP</th>
-            <th data-field="state" data-filter-control="input">State</th>
+            <th data-field="adress">Adress</th>
+            <th data-field="zip">Zip</th>
+            <th data-field="dealer_state">State</th>
+
         </tr>
     </thead>
+    <tbody>
+        {% for dealer in dealership_list %}
+            <tr>
+                <td>{{dealer.id}}</td>
+                <td>{{dealer.full_name}}</td>
+                <td>{{dealer.city}}</td>
+                <td>{{dealer.adress}}</td>
+                <td>{{dealer.zip}}</td>
+                <td>{{dealer.state}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 </body>
 
