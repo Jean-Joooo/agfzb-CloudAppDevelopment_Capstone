@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
 
-
 # Create your models here.
 
 class CarMake(models.Model):
@@ -37,6 +36,21 @@ class CarModel(models.Model):
             "Type" + self.carType + "," + \
             "Year" + self.year + "," + \
             "DealerId" + self.dealerId
+
+class DealerReview(models.Model):
+    dealership = models.CharField(null=True, max_length=30, default='Dealer Name')
+    name = models.CharField(null=True, max_length=30, default='Car Name')
+    purchase = models.CharField(null=True, max_length=30, default='Purchase')
+    review = models.CharField(null=True, max_length=30, default='Review')
+    purchaseDate = models.DateField(null=True, default=now)
+    carMake = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    carModel = models.ForeignKey(CarModel, on_delete=models.CASCADE)
+    carYear = models.DateField(null=True, default=now)
+    sentiment = models.CharField(null=True, max_length=30, default='Sentiment')
+    dealerId = models.IntegerField(null=False, default=0)
+
+    def __str__(self):
+        return "Dealer name: " + self.full_name
 
 class CarDealer:
     def __init__(self, address, city, full_name, id, lat, long, short_name, st, zip):
