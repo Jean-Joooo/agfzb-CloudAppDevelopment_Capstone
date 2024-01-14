@@ -13,8 +13,8 @@
     <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
 </head>
-
-  <!-- Navigation bar -->
+<body>
+<!-- Navigation bar -->
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,8 +44,19 @@
         </div>
     </nav>
 
-
 <!--Add a dealer table here -->
+    <table data-toggle="table" data-filter-control="true" data-show-export="true" data-click-to-select="true">
+        <thead>
+            <tr>
+                <th data-field="id">ID</th>
+                <th data-field="dealer_name">Dealer Name</th>
+                <th data-field="city">City</th>
+                <th data-field="address"> Address</th>
+                <th data-field="zip">ZIP</th>
+                <th data-field="state" data-filter-control="input">State</th>
+            </tr>
+        </thead>
+
 </body>
 
 </html>
