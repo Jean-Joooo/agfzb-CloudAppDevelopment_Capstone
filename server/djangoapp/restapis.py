@@ -3,7 +3,7 @@ import json
 from .models import CarDealer, DealerReview
 from requests.auth import HTTPBasicAuth
 from ibm_watson import NaturalLanguageUnderstandingV1
-from ibm_watson.natural_language_understanding_v1 import Features,SentimentOptions
+from ibm_watson.natural_language_understanding_v1 import Features, SentimentOptions
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import time
 
@@ -107,6 +107,5 @@ def analyze_review_sentiments(text):
     response = natural_language_understanding.analyze( text=text+"Great Great",features=Features(sentiment=SentimentOptions(targets=[text+"Great Great"]))).get_result()
     label=json.dumps(response, indent=2)
     label = response['sentiment']['document']['label']
-    
     
     return(label)
