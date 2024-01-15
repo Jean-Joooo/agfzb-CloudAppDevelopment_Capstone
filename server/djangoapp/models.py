@@ -13,7 +13,6 @@ class CarMake(models.Model):
     def __str__(self):
         return "Name: " + self.name
 
-# Car Model model
 class CarModel(models.Model):
     id = models.IntegerField(default=1,primary_key=True)
     name = models.CharField(null=False, max_length=100, default='Car')
