@@ -8,24 +8,14 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import time
 
 def get_request(url, **kwargs):
-    
-    api_key = kwargs.get("api_key")
     print("GET from {} ".format(url))
     try:
-        if api_key:
-            params = dict()
-            params["text"] = kwargs["text"]
-            params["version"] = kwargs["version"]
-            params["features"] = kwargs["features"]
-            params["return_analyzed_text"] = kwargs["return_analyzed_text"]
-            response = requests.get(url, params=params, headers={'Content-Type': 'application/json'},
-                                    auth=HTTPBasicAuth('apikey', api_key))
-        else:
-            response = requests.get(url, headers={'Content-Type': 'application/json'},
-                                    params=kwargs)
+        # Call get method of requests library with URL and parameters
+        response = requests.get(
+            url, headers={'Content-Type': 'application/json'}, params=kwargs)
     except:
+        # If any error occurs
         print("Network exception occurred")
-
     status_code = response.status_code
     print("With status {} ".format(status_code))
     json_data = json.loads(response.text)
@@ -83,9 +73,9 @@ def get_dealer_reviews_from_cf(url, **kwargs):
 
     return results
 
-
-def get_dealer_by_id_from_cf(url, id):
-    json_result = get_request(url, id=id)
+def get_dealer_by_id(url, dealer_id):
+    json_result = get_request(url, dealer_id=dealer_id)
+    print('json_result from line 54',json_result)
 
     if json_result:
         dealers = json_result
@@ -93,10 +83,10 @@ def get_dealer_by_id_from_cf(url, id):
     
         dealer_doc = dealers[0]
         dealer_obj = CarDealer(address=dealer_doc["address"], city=dealer_doc["city"],
-                                id=dealer_doc["id"], lat=dealer_doc["lat"], long=dealer_doc["long"], full_name=dealer_doc["full_name"],
-                                st=dealer_doc["st"], zip=dealer_doc["zip"])
+                                dealer_id=dealer_doc["id"], lat=dealer_doc["lat"], long=dealer_doc["long"], full_name=dealer_doc["full_name"],
+                                
+                                st=dealer_doc["st"], zip=dealer_doc["zip"], short_name=dealer_doc["short_name"])
     return dealer_obj
-
 
 def analyze_review_sentiments(text):
     url = "https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com/instances/07c29a04-9779-4a51-acc2-18793a0a2154"
