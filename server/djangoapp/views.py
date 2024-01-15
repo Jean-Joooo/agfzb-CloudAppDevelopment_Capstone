@@ -103,7 +103,11 @@ def get_dealer_details(request, id):
         print(reviews)
         context["reviews"] = reviews
         
-        return render(request, 'djangoapp/dealer_details.html', context)
+        reviews_json = json.dumps(reviews)
+        
+        response = HttpResponse(reviews_json, content_type='application/json')
+        
+        return response
 
 # Create a `add_review` view to submit a review
 # def add_review(request, dealer_id):

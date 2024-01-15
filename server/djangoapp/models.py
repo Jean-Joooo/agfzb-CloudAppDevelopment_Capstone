@@ -18,30 +18,33 @@ class CarMake(models.Model):
                "Description: " + self.description
 
 # Car Model model
+
 class CarModel(models.Model):
-    car_make = models.ForeignKey(CarMake, null=True, on_delete=models.CASCADE)
-    name = models.CharField(null=False, max_length=50)
     id = models.IntegerField(default=1,primary_key=True)
+    name = models.CharField(null=False, max_length=100, default='Car')
+   
+    SEDAN = 'Sedan'
+    SUV = 'SUV'
+    WAGON = 'Wagon'
+    MINIVAN = 'Minivan'
+    CAR_TYPES = [
+        (SEDAN, 'Sedan'),
+        (SUV, 'SUV'),
+        (WAGON, 'Wagon'),
+        (MINIVAN, 'Minivan')
+    ]
 
-    SEDAN = "Sedan"
-    SUV = "SUV"
-    WAGON = "Wagon"
-    SPORT = "Sport"
-    COUPE = "Coupe"
-    OTHER = "Other"
-    CAR_CHOICES = [(SEDAN, "Sedan"), (SUV, "SUV"), (WAGON, "Station wagon"), (SPORT, "Sports Car"),
-                   (COUPE, "Coupe"), (OTHER, 'Other')]
-
-    model_type = models.CharField(null=False, max_length=15, choices=CAR_CHOICES, default=SEDAN)
-
-    YEAR_CHOICES = []
-    for r in range(1980, datetime.datetime.now().year):
-        YEAR_CHOICES.append((r, r))
-
-    year = models.IntegerField(('year'), choices=YEAR_CHOICES, default=datetime.datetime.now().year)
+    type = models.CharField(
+        null=False,
+        max_length=50,
+        choices=CAR_TYPES,
+        default=SEDAN
+    )
+    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    year = models.DateField(default=now)
 
     def __str__(self):
-        return self.name + ", " + str(self.year) + ", " + self.model_ty
+        return "Name: " + self.name
 
 
 class CarDealer:
