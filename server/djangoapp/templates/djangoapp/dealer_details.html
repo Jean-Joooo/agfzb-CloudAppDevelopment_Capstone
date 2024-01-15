@@ -40,19 +40,32 @@
             </div>
         </nav>
   <!-- Add reviews as cards -->
-  <div class="card-columns">
-    {% for review in review_list%}
-    <div class="card">
-        <img class="card-img-left" src="{{MEDIA_URL}}/emoji/positive.png">
-        <div class="card-body">
-            <h2 class="card-text">{{review.car_model}}, {{review.car_make}}</h2>
-            <h2 class="card-text">{{review.purchase_date}}</h2>
-            <p class="card-text">{{review.review}}</p>
-        </div>
-    </div>
-    {% endfor%}
-</div>
-
-    </body>
+  <h1>Reviews for {{ dealer.full_name }}</h1>
+  <!-- Add reviews as cards -->
+  <div class="container">
+      <div class="card-columns">
+          {% for review in reviews %}
+              <div class="card">
+                  {% if review.sentiment == "positive" %}
+                  <img class="card-img-left" src="{{ MEDIA_URL }}/emoji/positive.png" width="36px" height="36px"
+                  alt="Sentiment" />
+                  {% elif review.sentiment == "neutral" %}
+                  <img class="card-img-left" src="{{ MEDIA_URL }}/emoji/neutral.png" width="36px" height="36px"
+                  alt="Sentiment" />
+                  {% else %}
+                  <img class="card-img-left" src="{{ MEDIA_URL }}/emoji/negative.png" width="36px" height="36px"
+                  alt="Sentiment" />
+                  {% endif %}
+  
+                  <div class="card-body">
+                      <p class="card-title">{{ review.car_make }}, {{ review.car_model }}</p>
+                      <p class="card-subtitle">{{ review.car_year }}</p>
+                      <p class="card-text">{{ review.review }}</p>
+                  </div>
+              </div>
+          {% endfor %}
+      </div>
+  </div>
+</body>
 
 </html>
