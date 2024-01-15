@@ -14,8 +14,7 @@ class CarMake(models.Model):
     name=models.CharField(null=False, max_length=30, default='Car Name')
     description = models.CharField(max_length=1000)
     def __str__(self):
-        return "Name: " + self.name + "," + \
-               "Description: " + self.description
+        return "Name: " + self.name
 
 # Car Model model
 
@@ -45,7 +44,6 @@ class CarModel(models.Model):
 
     def __str__(self):
         return "Name: " + self.name
-
 
 class CarDealer:
 
