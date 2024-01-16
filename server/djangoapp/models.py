@@ -56,54 +56,23 @@ class CarDealer:
     
 class DealerReview:
 
-    def __init__(dealership, name, purchase, review, purchase_date, car_make, car_model, car_year, sentiment, id):
-        # Dealership id
+    def __init__(self, dealership, name, purchase, review):
+        # Required attributes
         self.dealership = dealership
-        # Reviewer name
         self.name = name
-        # Purchase
         self.purchase = purchase
-        # Review
         self.review = review
-        # Purchase date
-        self.purchase_date = purchase_date
-        # Car make
-        self.car_make = car_make
-        # Car model
-        self.car_model = car_model
-        # Car year
-        self.car_year = car_year
-        # Sentiment
-        self.sentiment = sentiment
-        # id
-        self.id = id
+        # Optional attributes
+        self.purchase_date = ""
+        self.purchase_make = ""
+        self.purchase_model = ""
+        self.purchase_year = ""
+        self.sentiment = ""
+        self.id = ""
 
     def __str__(self):
         return "Review: " + self.review
-    
-class ReviewPost:
 
-    def __init__(dealership, name, purchase, review, purchase_date, car_make, car_model, car_year, sentiment, id):
-        # Dealership
-        self.dealership = dealership
-        # Reviewer name
-        self.name = name
-        # Purchase
-        self.purchase = purchase
-        # Review
-        self.review = review
-        # Purchase date
-        self.purchase_date = purchase_date
-        # Car make
-        self.car_make = car_make
-        # Car model
-        self.car_model = car_model
-        # Car year
-        self.car_year = car_year
-        # Sentiment
-        self.sentiment = sentiment
-        # id
-        self.id = id
-
-    def __str__(self):
-        return "review: " + self.review
+    def to_json(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+                            sort_keys=True, indent=4)
