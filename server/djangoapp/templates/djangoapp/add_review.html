@@ -39,16 +39,9 @@
                                 <option selected value={{car.id}}>{{car.name}}-{{car.make}}-{{ car.year|date:"Y" }}</option>
                             {% endfor %}
                        </select>                        
-                       <script type="text/javascript">
-                        <input class="date-own form-control" type="text" name="purchasedate" id="purchasedate">
-                        <script type="text/javascript">
-                        $('.date-own').datepicker({
-                        format: 'mm/dd/yyyy'
-                        });
-                        </script>
                       </div>
                       <div class="mb-3">
-                          <label for="purchasedate"><b>Select Your Purchase Date: </b></label>
+                        <label for="purchasedate"><b>Select Your Purchase Date: </b></label>
                           <script type="text/javascript">
                         $('.date-own').datepicker({
                         format: 'mm/dd/yyyy'
@@ -69,13 +62,6 @@
                 {% endif %}
             </form>
         </div>
-        </body>
-        
-        <script type="text/javascript">
-              $('.date-own').datepicker({
-                 format: 'mm/dd/yyyy'
-               });
-         </script>
 
         </body>
 
