@@ -47,6 +47,19 @@ def post_request(url, json_payload, **kwargs):
     response = requests.post(url, params=kwargs, json=json_payload)
     return response
 
+def get_dealer_by_id_from_cf(url, id):
+    json_result = get_request(url, id=id)
+
+    if json_result:
+        dealers = json_result
+        
+    
+        dealer_doc = dealers[0]
+        dealer_obj = CarDealer(address=dealer_doc["address"], city=dealer_doc["city"],
+                                id=dealer_doc["id"], lat=dealer_doc["lat"], long=dealer_doc["long"], short_name=dealer_doc["short_name"], 
+                                full_name=dealer_doc["full_name"], st=dealer_doc["st"], zip=dealer_doc["zip"])
+    return dealer_obj
+
 def get_dealer_reviews_from_cf(url, **kwargs):
     results = []
     id = kwargs.get("id")
@@ -56,7 +69,7 @@ def get_dealer_reviews_from_cf(url, **kwargs):
         json_result = get_request(url)
     if json_result:
         print("line 99",json_result)
-        reviews = json_result["data"]["docs"]
+        reviews = json_result
         for dealer_review in reviews:
             review_obj = DealerReview(dealership=dealer_review["dealership"],
                                    name=dealer_review["name"],
@@ -80,18 +93,6 @@ def get_dealer_reviews_from_cf(url, **kwargs):
 
     return results
 
-def get_dealer_by_id_from_cf(url, id):
-    json_result = get_request(url, id=id)
-
-    if json_result:
-        dealers = json_result
-        
-    
-        dealer_doc = dealers[0]
-        dealer_obj = CarDealer(address=dealer_doc["address"], city=dealer_doc["city"],
-                                id=dealer_doc["id"], lat=dealer_doc["lat"], long=dealer_doc["long"], short_name=dealer_doc["short_name"], 
-                                full_name=dealer_doc["full_name"], st=dealer_doc["st"], zip=dealer_doc["zip"])
-    return dealer_obj
 
 def analyze_review_sentiments(dealerreview):
     url = "https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com/instances/07c29a04-9779-4a51-acc2-18793a0a2154"

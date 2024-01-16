@@ -54,17 +54,11 @@ class CarDealer:
     def __str__(self):
         return "Dealer name: " + self.full_name
     
-    def to_json(self):
-            return json.dumps(self, default=lambda o: o.__dict__,
-                                sort_keys=True, indent=4)
-    
 class DealerReview:
 
-    def __init__(self, dealership, name, purchase, review, purchase_date, car_make, car_model, car_year, sentiment, id):
+    def __init__(dealership, name, purchase, review, purchase_date, car_make, car_model, car_year, sentiment, id):
         # Dealership id
         self.dealership = dealership
-        # Review id
-        self.id = id
         # Reviewer name
         self.name = name
         # Purchase
@@ -86,18 +80,12 @@ class DealerReview:
 
     def __str__(self):
         return "Review: " + self.review
-    
-    def to_json(self):
-            return json.dumps(self, default=lambda o: o.__dict__,
-                                sort_keys=True, indent=4)
     
 class ReviewPost:
 
-    def __init__(self, dealership, name, purchase, review, purchase_date, car_make, car_model, car_year, sentiment, id):
-        # Dealership id
+    def __init__(dealership, name, purchase, review, purchase_date, car_make, car_model, car_year, sentiment, id):
+        # Dealership
         self.dealership = dealership
-        # Review id
-        self.id = id
         # Reviewer name
         self.name = name
         # Purchase
@@ -118,8 +106,4 @@ class ReviewPost:
         self.id = id
 
     def __str__(self):
-        return "Review: " + self.review
-    
-    def to_json(self):
-            return json.dumps(self, default=lambda o: o.__dict__,
-                                sort_keys=True, indent=4)
+        return "review: " + self.review
