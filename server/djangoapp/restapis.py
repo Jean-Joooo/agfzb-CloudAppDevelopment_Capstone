@@ -15,23 +15,18 @@ def get_request(url, **kwargs):
 
         if "api_key" in kwargs:
            
-            params = dict()
-            params["text"] = kwargs["text"]
-            params["version"] = kwargs["version"]
-            params["features"] = kwargs["features"]
-            params["return_analyzed_text"] = kwargs["return_analyzed_text"]
-            print(params)
             response = requests.get(url, headers={'Content-Type': 'application/json'},
                                     params=params, auth=HTTPBasicAuth('apikey', kwargs["api_key"]))
         else:
             response = requests.get(url, headers={'Content-Type': 'application/json'},
                                     params=kwargs)
-        status_code = response.status_code
-        print("With status {} ".format(status_code))
-        json_data = json.loads(response.text)
-        return json_data
     except:
         print("Network exception occurred")
+
+    status_code = response.status_code
+    print("With status {} ".format(status_code))
+    json_data = json.loads(response.text)
+    return json_data
 
 def get_dealers_from_cf(url, **kwargs):
     results = []
@@ -98,7 +93,7 @@ def get_dealer_by_id_from_cf(url, id):
                                 full_name=dealer_doc["full_name"], st=dealer_doc["st"], zip=dealer_doc["zip"])
     return dealer_obj
 
-def analyze_review_sentiments(text):
+def analyze_review_sentiments(dealerreview):
     url = "https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com/instances/07c29a04-9779-4a51-acc2-18793a0a2154"
     api_key = "6eBAVFWg0vifjB_T9_h-VC7LiS5BFOhCxba5XH4TaWBY"
     authenticator = IAMAuthenticator(api_key)
