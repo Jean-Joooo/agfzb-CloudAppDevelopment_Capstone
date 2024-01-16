@@ -29,18 +29,31 @@
                           </label>
                           <label class="text-muted">(select purchased car information below if checked)</label>
                       </div>
+
+                
         
                       <div class="mb-3">
-                          <label for="car"><b>Select your car (model-make-year):</b></label>
-                          <select name="car" id="car" class="form-select" required>
-                              {% for car in cars %}
-                              <option selected value={{car.id}}>{{car.name}}-{{car.make.name}}-{{ car.year|date:"Y" }}</option>
-                              {% endfor %}
-                          </select>
+                        <label for="car"><b>Select your car (model-make-year):</b></label>
+                        <select name="car" id="car" class="form-select" required>
+                            {% for car in cars %}
+                                <option selected value={{car.id}}>{{car.name}}-{{car.make}}-{{ car.year|date:"Y" }}</option>
+                            {% endfor %}
+                       </select>                        
+                       <script type="text/javascript">
+                        <input class="date-own form-control" type="text" name="purchasedate" id="purchasedate">
+                        <script type="text/javascript">
+                        $('.date-own').datepicker({
+                        format: 'mm/dd/yyyy'
+                        });
+                        </script>
                       </div>
-        
                       <div class="mb-3">
                           <label for="purchasedate"><b>Select Your Purchase Date: </b></label>
+                          <script type="text/javascript">
+                        $('.date-own').datepicker({
+                        format: 'mm/dd/yyyy'
+                        });
+                        </script>
                           <input class="date-own form-control" style="width: 300px;" type="text" name="purchasedate" id="purchasedate">
                       </div>
         

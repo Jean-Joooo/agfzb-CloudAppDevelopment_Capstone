@@ -6,11 +6,11 @@ import json
 
 
 class CarMake(models.Model):
-    name=models.CharField(null=False, max_length=30, default='Car Name')
+    name = models.CharField(null=False, max_length=30, default='undifined')
     description = models.CharField(max_length=1000)
 
     def __str__(self):
-        return "Name: " + self.name
+        return self.name
 
 class CarModel(models.Model):
         SEDAN = 'sedan'
@@ -21,18 +21,13 @@ class CarModel(models.Model):
             (SUV, 'SUV'),
             (WAGON, 'Wagon'),
         ]
-        car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
-        name = models.CharField(null=False, max_length=30, default='Car Name')
-        dealer_id = models.IntegerField()
-        type = models.CharField(
-            null=False,
-            max_length=20,
-            choices=CAR_TYPE_CHOICES,
-            default=SEDAN
-        )
-        year = models.DateField()
+        make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+        id = models.IntegerField(primary_key=True)
+        name = models.CharField(max_length=30, default='undifined')
+        type = models.CharField(null=False, max_length=20, choices= CAR_TYPE_CHOICES, default='SEDAN')
+        year = models.DateField(default=now, editable=True)
         def __str__(self):
-            return "Name: " + self.name 
+            return self.name
 
 class CarDealer:
 
