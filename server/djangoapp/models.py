@@ -20,7 +20,7 @@ class CarModel(models.Model):
             (SUV, 'SUV'),
             (WAGON, 'Wagon'),
         ]
-        make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+        car_make = models.ForeignKey(CarMake, max_length=30, on_delete=models.CASCADE)
         id = models.IntegerField(primary_key=True)
         name = models.CharField(max_length=30, default='undifined')
         type = models.CharField(null=False, max_length=20, choices= CAR_TYPE_CHOICES, default='SEDAN')
@@ -57,12 +57,10 @@ class CarDealer:
 class DealerReview:
 
     def __init__(self, dealership, name, purchase, review):
-        # Required attributes
         self.dealership = dealership
         self.name = name
         self.purchase = purchase
         self.review = review
-        # Optional attributes
         self.purchase_date = ""
         self.purchase_make = ""
         self.purchase_model = ""
