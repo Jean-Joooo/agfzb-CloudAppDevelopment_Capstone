@@ -14,7 +14,8 @@
 <body>
     <div class="container-fluid">
         <h3>Add a review about <b>{{dealer.full_name}}</b></h3>
-        <form action="{% url 'djangoapp:add_review' dealer.id%}" method="post">
+        <form action="{% url 'djangoapp:add_review' dealer.id%}" method="post">{% csrf_token %}
+        
             <div class="form-group">
     
                   <div class="mb-3">
@@ -45,7 +46,7 @@
                   </div>
     
             </div>
-            {% csrf_token %}
+    
             <div>
                 <button class="btn btn-primary" type="submit">Submit</button>
             </div>
