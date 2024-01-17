@@ -50,10 +50,9 @@ def get_dealers_from_cf(url, **kwargs):
     return results
 
 def post_request(url, json_payload, **kwargs):
-    """Sends a POST request to the passed URL with the passed payload"""
-    import requests
-    r = requests.post(url, json=json_payload, **kwargs)
-    return r.text
+    url =  "https://jeanjosephag-5000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/api/post_review"
+    response = requests.post(url, params=kwargs, json=json_payload)
+    return response
 
 def get_dealer_by_id_from_cf(url, id):
     json_result = get_request(url, id=id)
