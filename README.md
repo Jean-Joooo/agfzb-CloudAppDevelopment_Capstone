@@ -1,6 +1,8 @@
 IBM Capstone Full Stack Cloud Development Capstone Project : 
 
-Welcome to the exciting journey of my IBM Capstone Project! This endeavor was divided into several engaging steps, each contributing to the development and deployment of a robust application. Below is a breakdown of the key milestones achieved during this immersive experience:
+Welcome to the exciting journey of my IBM Capstone Project! This endeavor was divided into several engaging steps, each contributing to the development and deployment of a robust application. 
+
+This is a breakdown of the key milestones achieved during this immersive experience:
 
 Step 1: Prework - Igniting the Spark
 Embarked on the journey by creating my IBM Cloud account, a gateway to a world of possibilities.
