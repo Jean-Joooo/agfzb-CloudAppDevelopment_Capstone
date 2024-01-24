@@ -14,18 +14,17 @@ Set up CI/CD for my source code.
 
 Step 3: User Management and Beyond - Crafting a Personalized Experience
 Empowered the application with user management capabilities, leveraging the Django authentication system.
-Managed API's, and I created some functions to fetch well the data as per user request.
-
-Step 4: Backend Mastery 
 Sculpted more the models and views to manage car makes and car models, laying the foundation for efficient data handling.
-Introduced scalability and modularity, and also integrate dealers, reviews, and cars into a cohesive system.
+Managed API's, and I created some functions to fetch well the data as per user request.
+Sculpted more the models and views to manage car makes and car models, laying the foundation for efficient data handling.
 
-Step 5: Dynamic Pages - Unleashing Interactivity
+Step 4: Backend Mastery - Dynamic Pages - Unleashing Interactivity
+Introduced scalability and modularity, and also integrate dealers, reviews, and cars into a cohesive system.
 Invited users to explore a comprehensive page showcasing all dealers, making the experience both informative and delightful.
 Opened the doors to valuable insights with a dedicated page for reviews, enabling users to dive deep into the world of automotive experiences.
 Encouraged user engagement by providing a platform for adding reviews, turning every user into a valued contributor.
 
-Step 6: Containerization - Elevating Accessibility
-Elevated the application's accessibility by packaging it into a container, streamlining management and deployment.
+Step 5: Containerization - Elevating Accessibility
+Elevated the application's accessibility by packaging it into a container, to streamline the management.
 
 This capstone project has been a beautiful adventure for myself, marked by efforts, innovation, and achievement.
