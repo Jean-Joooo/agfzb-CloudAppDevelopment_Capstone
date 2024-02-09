@@ -1,30 +1,35 @@
-IBM Capstone Full Stack Cloud Development Capstone Project : 
+Coursera | IBM Full Stack Cloud Development Capstone Project:
 
-Welcome to the exciting journey of my IBM Capstone Project! This endeavor was divided into several engaging steps, each contributing to the development and deployment of a robust application. 
+<img width="601" alt="v2 capstone-dealership-architecture" src="https://github.com/Jean-Joooo/agfzb-CloudAppDevelopment_Capstone/assets/124114074/381e1012-b728-4d73-91b2-c2777532494f">
 
-This is a breakdown of the key milestones achieved during this immersive experience:
+Throughout this capstone project, I actively participated in hands-on labs, implemented crucial features, and extensively tested the deployment of this dynamic website, primarily within the IBM environment.
 
-Step 1: Prework - Igniting the Spark
-Firstly, I had to set up my project, and I started to build somes static pages too, the path from some url on urls.py, and on views.py, and I have done some test to check if the server was running properly.
-Then, I set up a Watson Natural Language Understanding (NLU) service, a powerful tool for unraveling the mysteries hidden in text.
+Here's a concise breakdown of the milestones:
 
-Step 2: Build - Bringing Ideas to Life
-Dived into the development environment, I take care of the user management, and I sculpted some static pages.
-Set up CI/CD for my source code.
+1. Static pages:
+•	Basic server functionality testing
+•	Setup project structure, and initial static pages creation
 
-Step 3: User Management and Beyond - Crafting a Personalized Experience
-Empowered the application with user management capabilities, leveraging the Django authentication system.
-Sculpted more the models and views to manage car makes and car models, laying the foundation for efficient data handling.
-Managed API's, and I created some functions to fetch well the data as per user request.
-Sculpted more the models and views to manage car makes and car models, laying the foundation for efficient data handling.
+2. User Management & CI/CD:
+•	Integration of Django authentication system
+•	User management implementation
+•	Implement CI/CD for source code
 
-Step 4: Backend Mastery - Dynamic Pages - Unleashing Interactivity
-Introduced scalability and modularity, and also integrate dealers, reviews, and cars into a cohesive system.
-Invited users to explore a comprehensive page showcasing all dealers, making the experience both informative and delightful.
-Opened the doors to valuable insights with a dedicated page for reviews, enabling users to dive deep into the world of automotive experiences.
-Encouraged user engagement by providing a platform for adding reviews, turning every user into a valued contributor.
+3. Backend services:
+•	Define API endpoints
+•	Develop Django Models (CarModel and CarMake)
+•	Create Django Proxy Services for efficient data handling
 
-Step 5: Containerization - Elevating Accessibility
-Elevated the application's accessibility by packaging it into a container, to streamline the management.
+4. Dynamic Pages:
+•	Enhance scalability and modularity
+•	Integrate dealers, reviews, and cars into a cohesive system
+•	Create dynamic pages for dealers and reviews
 
-This capstone project has been a beautiful adventure for myself, marked by efforts, innovation, and achievement.
+5. Containerization:
+•	Package this Django app into a container for streamlined management
+
+6. Submit my Work:
+•	Successful submission of my capstone project
+
+This capstone project has been a rewarding adventure marked by innovation and achievement. From igniting the spark with static pages to crafting a personalized experience through user management and dynamic pages, each step has contributed to the development of a robust and engaging application.
+
