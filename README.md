@@ -1,19 +1,20 @@
-Coursera | IBM Full Stack Cloud Development Capstone Project:
+Coursera | IBM Full Stack Cloud Development Capstone Project
+
 
 <img width="601" alt="v2 capstone-dealership-architecture" src="https://github.com/Jean-Joooo/agfzb-CloudAppDevelopment_Capstone/assets/124114074/381e1012-b728-4d73-91b2-c2777532494f">
 
 Throughout this capstone project, I actively participated in hands-on labs, implemented crucial features, and extensively tested the deployment of this dynamic website, primarily within the IBM environment.
 
-Here's a concise breakdown of the milestones:
+Here's a concise breakdown of the milestones :
 
-1. Static pages:
+1. Static pages :
    
 •	Basic server functionality testing
 
 •	Setup project structure, and initial static pages creation
 
 
-2. User Management & CI/CD:
+2. User Management & CI/CD :
 
 •	Integration of Django authentication system
 
@@ -22,7 +23,7 @@ Here's a concise breakdown of the milestones:
 •	Implement CI/CD for source code
 
 
-3. Backend services:
+3. Backend services :
    
 •	Define API endpoints
 
@@ -31,7 +32,7 @@ Here's a concise breakdown of the milestones:
 •	Create Django Proxy Services for efficient data handling
 
 
-4. Dynamic Pages:
+4. Dynamic Pages :
    
 •	Enhance scalability and modularity
 
@@ -40,12 +41,12 @@ Here's a concise breakdown of the milestones:
 •	Create dynamic pages for dealers and reviews
 
 
-5. Containerization:
+5. Containerization :
     
 •	Package this Django app into a container for streamlined management
 
 
-6. Submit my Work:
+6. Submit my Work :
    
 •	Successful submission of my capstone project
 
