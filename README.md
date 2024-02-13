@@ -1,6 +1,6 @@
-<img width="480" alt="v2 capstone-dealership-architecture" src="https://github.com/Jean-Joooo/agfzb-CloudAppDevelopment_Capstone/assets/124114074/381e1012-b728-4d73-91b2-c2777532494f">
-
 Coursera | IBM Full Stack Cloud Development Capstone Project :
+
+<img width="480" alt="v2 capstone-dealership-architecture" src="https://github.com/Jean-Joooo/agfzb-CloudAppDevelopment_Capstone/assets/124114074/381e1012-b728-4d73-91b2-c2777532494f">
 
 Throughout this capstone project, I actively participated in hands-on labs, implemented crucial features, and extensively tested the deployment of this dynamic website, primarily within the IBM environment.
 
