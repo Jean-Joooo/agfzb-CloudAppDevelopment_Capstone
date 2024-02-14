@@ -2,6 +2,7 @@
 
 <img width="480" alt="v2 capstone-dealership-architecture" src="https://github.com/Jean-Joooo/agfzb-CloudAppDevelopment_Capstone/assets/124114074/381e1012-b728-4d73-91b2-c2777532494f">
 
+
 Throughout this capstone project, I actively participated in hands-on labs, implemented crucial features, and extensively tested the deployment of this dynamic website, primarily within the IBM environment.
 
 Here's a concise breakdown of the milestones :
@@ -48,6 +49,5 @@ Here's a concise breakdown of the milestones :
 6. Submit my Work :
    
 •	Successful submission of my capstone project
-
 
 This capstone project has been a rewarding adventure marked by innovation and achievement. From igniting the spark with static pages to crafting a personalized experience through user management and dynamic pages, each step has contributed to the development of a robust and engaging application.
